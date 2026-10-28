@@ -1,0 +1,13 @@
+/stories/
+/config/
+/runs/
+/Documentation/
+PRD.md
+NEEDS-YOU.md
+CLAUDE.md
+/.stacksmith/
+.env
+.env.*
+node_modules/
+.next/
+/video/

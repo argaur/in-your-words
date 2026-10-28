@@ -1,0 +1,43 @@
+{
+  "name": "in-your-words",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check:events": "python scripts/check_events.py",
+    "check": "npm run typecheck && npm run test && npm run check:events && npm run leak",
+    "local": "bash scripts/dev-local.sh",
+    "engine": "tsx scripts/engine.ts",
+    "leak": "tsx scripts/leak-scan.ts",
+    "e2e": "playwright test"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "1.2.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "next": "16.4.3",
+    "openai": "7.28.0",
+    "posthog-js": "1.438.21",
+    "radix-ui": "1.8.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tailwind-merge": "3.7.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  }
+}

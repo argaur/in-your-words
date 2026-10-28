@@ -1,0 +1,126 @@
+/* In Your Words v2 design tokens. Direction A, Exhibit (picked by Gaurav 2026-10-27).
+   Tailwind CSS 4, CSS-first: @theme replaces tailwind.config. Wired in 2026-10-28 from
+   Documentation/design/system/v2/tokens.css, which stays the design source. Change both together.
+
+   The one idea: every backed sentence carries a numbered sticker, and the sticker is the source ID.
+   Every token has one role. A token used outside its role is a bug.
+   Contrast measured 2026-10-27 (WCAG 2.1 relative luminance, scratch script). Ratios in comments.
+
+   Theme policy: light is the default, set by the page, never by the OS. Dark is built to the same bar.
+   The root takes data-theme="light|dark" (also ?theme=light|dark in the URL) and a visible toggle. */
+
+@import "tailwindcss";
+
+@theme {
+  /* ---------- Type ----------
+     Public Sans: all UI and answer text (the plain face of public forms, the paperwork of proof).
+     Sofia Sans Extra Condensed 800: screen titles, the landing headline, the wordmark, list headers.
+     Never for a sentence the user reads as prose. Never a third family. */
+  --font-sans: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --font-label: "Sofia Sans Extra Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+
+  /* Five text sizes plus two display sizes. Rank comes from weight, case and reversal, not more sizes. */
+  --text-sm: 0.875rem;      /* 14 px. Meta under a line, hints, exhibit list notes. Weight 400 to 600 */
+  --text-meta: 0.9375rem;   /* 15 px. Buttons that are not the main action, counts, reasons */
+  --text-body: 1rem;        /* 16 px. UI text. Inputs never go below this (iOS zoom) */
+  --text-answer: 1.0625rem; /* 17 px, line-height 1.65. Answer sentences and voice boxes only */
+  --text-q: 1.25rem;        /* 20 px, weight 700. The form question and the gap question */
+  --text-title: clamp(2.5rem, 10vw, 3.5rem);    /* 40 to 56 px, label face 800. Screen titles */
+  --text-hero: clamp(2.875rem, 12.4vw, 8rem);   /* 46 to 128 px, label face 800. Landing headline only */
+
+  /* Spacing: 4 px base. Lines breathe at 12 px, groups at 16 to 20 px, sections at 40 to 56 px. */
+  --spacing: 0.25rem;
+
+  /* Radius: one value. Stickers, buttons, inputs, the sheet. Nothing is pill-shaped or round. */
+  --radius-sm: 3px;
+
+  /* Motion. One authored moment (the sticker print), everything else is a short state change. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --dur-press: 120ms;   /* button press scale */
+  --dur-state: 180ms;   /* line highlight, hover */
+  --dur-open: 200ms;    /* the exhibit dropping open under a line */
+  --dur-print: 360ms;   /* a new sticker printing into an empty slot. The signature move */
+
+  /* ---------- Colour roles, light (default) ---------- */
+  --color-ground: #E9EDF1;      /* page. Cool lab grey. Never warm, never cream */
+  --color-sheet: #FFFFFF;       /* the answer sheet and panels. Flat: no shadow, no card border */
+  --color-field: #FFFFFF;       /* text inputs and voice boxes */
+  --color-ink: #111418;         /* text. 15.70 on ground, 18.47 on sheet */
+  --color-ink-2: #46515C;       /* secondary text, reasons, hints, placeholders. 6.89 on ground, 8.10 on sheet */
+  --color-rule: #C3CBD3;        /* hairlines between lines. Decorative, never the only boundary of a control */
+  --color-rule-strong: #77838F; /* input borders, disabled outlines. 3.87 on sheet, 3.29 on ground (non-text 3:1) */
+  --color-select: #DDE4EB;      /* the selected or open line. Neutral in light by Gaurav's call: yellow stays on stickers. ink-2 on it 6.32 */
+  --color-shell: #2B3440;       /* top bar and bottom tabs only. Steel */
+  --color-shell-ink: #F1F3F5;   /* text on shell. 11.32 */
+  --color-shell-ink-2: #C3CBD4; /* inactive nav on shell. 7.68 */
+  --color-sticker: #FFC400;     /* STICKERS ONLY: a source ID she said aloud, and the wordmark. Never a button, never a fill behind text */
+  --color-sticker-ink: #111418; /* numerals on a sticker. 11.56 */
+  --color-web: #2B3440;         /* web source stickers (WEB W13). Steel, so it never reads as her voice */
+  --color-web-ink: #F1F3F5;     /* 11.32 */
+  --color-action: #111418;      /* the main action: a reversed ink plate. One per view */
+  --color-action-ink: #FFFFFF;  /* 18.47 */
+  --color-focus: #111418;       /* 2 px focus ring, 2 px offset. 15.70 on ground */
+}
+
+/* ---------- Dark: same roles. Toggle wins in both directions. ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-ground: #12161B;       /* graphite, cool */
+    --color-sheet: #1A2027;
+    --color-field: #12161B;
+    --color-ink: #E6EAEE;          /* 15.02 on ground, 13.57 on sheet */
+    --color-ink-2: #B4BEC8;        /* 9.63 on ground, 8.70 on sheet, 7.10 on select (lifted in Leg C repair) */
+    --color-rule: #313A45;
+    --color-rule-strong: #6B7785;  /* 3.6 on sheet */
+    --color-select: #26303B;       /* ink-2 on it 7.10 */
+    --color-shell: #222A33;
+    --color-shell-ink: #E6EAEE;    /* 12.00 */
+    --color-shell-ink-2: #A3AEB9;  /* 6.44 */
+    --color-web: #4A5868;          /* web-ink on it 6.54; 2.3:1 against the sheet so the chip separates */
+    --color-action: #F5F7F9;
+    --color-action-ink: #12161B;   /* 16.91. Action is lighter than ink so the plate never reads as disabled */
+    --color-focus: #FFC400;        /* 11.37 on ground. The one place yellow is not a sticker: focus must be loud in dark */
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-ground: #12161B;
+  --color-sheet: #1A2027;
+  --color-field: #12161B;
+  --color-ink: #E6EAEE;
+  --color-ink-2: #B4BEC8;
+  --color-rule: #313A45;
+  --color-rule-strong: #6B7785;
+  --color-select: #26303B;
+  --color-shell: #222A33;
+  --color-shell-ink: #E6EAEE;
+  --color-shell-ink-2: #A3AEB9;
+  --color-web: #4A5868;
+  --color-action: #F5F7F9;
+  --color-action-ink: #12161B;
+  --color-focus: #FFC400;
+}
+
+/* ---------- Base: browser surfaces carry the design too ---------- */
+:root { color-scheme: light; }
+html { background: var(--color-ground); color: var(--color-ink); font-family: var(--font-sans); scrollbar-color: var(--color-rule-strong) var(--color-ground); }
+body { font-size: var(--text-body); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+::selection { background: var(--color-sticker); color: var(--color-sticker-ink); }
+textarea, input { caret-color: var(--color-ink); font-size: max(16px, 1em); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+a { text-underline-offset: 3px; }
+button, a, [role="button"] { cursor: pointer; }
+.tabular, .count { font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+}
+
+@media print {
+  /* Defend sheet print view: black on white, no shell. Stickers keep their text and a 1 px outline. */
+  :root { --color-ground: #FFFFFF; --color-sheet: #FFFFFF; --color-ink: #000000; }
+  .no-print { display: none !important; }
+}

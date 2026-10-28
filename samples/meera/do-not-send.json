@@ -1,0 +1,4 @@
+{
+  "note": "Companies this user has already applied to or must not be drafted for. Example file for the fictional persona. A real user's list lives in config/do-not-send.local.json, which git ignores.",
+  "companies": ["FleetGrid"]
+}

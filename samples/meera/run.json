@@ -1,0 +1,1006 @@
+{
+  "run_id": "meera-flexport-2026-10-26",
+  "mode": "replay",
+  "persona": true,
+  "bank_source": "persona",
+  "posting_url": "https://job-boards.greenhouse.io/flexport/jobs/8158023",
+  "company": "Flexport",
+  "steps": {
+    "research": "done",
+    "draft": "done",
+    "judge": "done"
+  },
+  "fallback_model": false,
+  "usage": {
+    "research": {
+      "tokens": 935,
+      "seconds": 3.6,
+      "cost_estimate": 0.0005
+    },
+    "draft": {
+      "tokens": 6252,
+      "seconds": 4,
+      "cost_estimate": 0.0089
+    },
+    "judge": {
+      "tokens": 13626,
+      "seconds": 17.5,
+      "cost_estimate": 0.0067
+    }
+  },
+  "timer_active_seconds": 0,
+  "story_lines": [
+    {
+      "id": "S1",
+      "text": "I'm a senior product manager.",
+      "item": 1
+    },
+    {
+      "id": "S2",
+      "text": "Ten years in product in total, the last six in logistics software.",
+      "item": 1
+    },
+    {
+      "id": "S3",
+      "text": "Before that I was a business analyst for about two years at a bank's operations team.",
+      "item": 1
+    },
+    {
+      "id": "S4",
+      "text": "Right now I'm at a company I'll call FleetGrid.",
+      "item": 2
+    },
+    {
+      "id": "S5",
+      "text": "It's a mid-size SaaS company that sells dispatch and tracking software to regional trucking firms.",
+      "item": 2
+    },
+    {
+      "id": "S6",
+      "text": "I joined in March 2021 as a product manager and became senior product manager in April 2023.",
+      "item": 2
+    },
+    {
+      "id": "S7",
+      "text": "My area is the carrier app and the exceptions desk.",
+      "item": 3
+    },
+    {
+      "id": "S8",
+      "text": "The exceptions desk is where dispatchers handle the loads that go wrong, like a late pickup, a wrong address or a damaged shipment.",
+      "item": 3
+    },
+    {
+      "id": "S9",
+      "text": "The biggest thing I shipped is an AI triage feature for that exceptions desk.",
+      "item": 4
+    },
+    {
+      "id": "S10",
+      "text": "Every exception that came in got a suggested category and a suggested next step.",
+      "item": 4
+    },
+    {
+      "id": "S11",
+      "text": "Before that, dispatchers read every ticket from scratch.",
+      "item": 4
+    },
+    {
+      "id": "S12",
+      "text": "I didn't write the model.",
+      "item": 5
+    },
+    {
+      "id": "S13",
+      "text": "Our ML engineer, two backend engineers and one designer built it with me.",
+      "item": 5
+    },
+    {
+      "id": "S14",
+      "text": "I wrote the spec, I set up the evaluation, and I ran the pilot.",
+      "item": 5
+    },
+    {
+      "id": "S15",
+      "text": "The evaluation was the part I cared about most.",
+      "item": 6
+    },
+    {
+      "id": "S16",
+      "text": "We took 400 past exceptions that dispatchers had already closed, and two senior dispatchers labelled the right category for each one.",
+      "item": 6
+    },
+    {
+      "id": "S17",
+      "text": "That was our test set, and nobody was allowed to tune the prompt on it.",
+      "item": 6
+    },
+    {
+      "id": "S18",
+      "text": "The first version got 71 percent of categories right on that set.",
+      "item": 7
+    },
+    {
+      "id": "S19",
+      "text": "That was not good enough to ship, because a wrong category sends the ticket to the wrong team.",
+      "item": 7
+    },
+    {
+      "id": "S20",
+      "text": "We changed it so that it only suggested a category when it was confident, and otherwise it said \"needs a human\".",
+      "item": 8
+    },
+    {
+      "id": "S21",
+      "text": "On the cases where it did suggest, it was right 92 percent of the time, and it suggested on about 64 percent of tickets.",
+      "item": 8
+    },
+    {
+      "id": "S22",
+      "text": "We piloted it with three customers for six weeks.",
+      "item": 9
+    },
+    {
+      "id": "S23",
+      "text": "Median time to the first action on an exception went from about 19 minutes to about 11 minutes across those three customers.",
+      "item": 9
+    },
+    {
+      "id": "S24",
+      "text": "I want to be careful here, it was three customers, so it is a pilot number, not a company-wide number.",
+      "item": 9
+    },
+    {
+      "id": "S25",
+      "text": "One thing went wrong in the pilot.",
+      "item": 10
+    },
+    {
+      "id": "S26",
+      "text": "The model started tagging every weather delay as a \"carrier fault\", because one customer typed weather notes in the carrier field.",
+      "item": 10
+    },
+    {
+      "id": "S27",
+      "text": "We caught it because I had asked for a weekly sample review of 30 suggestions.",
+      "item": 10
+    },
+    {
+      "id": "S28",
+      "text": "We fixed the input mapping, not the model.",
+      "item": 10
+    },
+    {
+      "id": "S29",
+      "text": "My lesson from that is that a weekly human review of a small sample is cheaper than any dashboard, and it catches the strange failures.",
+      "item": 11
+    },
+    {
+      "id": "S30",
+      "text": "The second thing I'd talk about is a failed launch.",
+      "item": 12
+    },
+    {
+      "id": "S31",
+      "text": "In 2022 we built a self-serve onboarding flow for small carriers.",
+      "item": 12
+    },
+    {
+      "id": "S32",
+      "text": "I pushed for it.",
+      "item": 12
+    },
+    {
+      "id": "S33",
+      "text": "Sign-ups went up but almost none of those carriers became paying accounts in the first quarter.",
+      "item": 12
+    },
+    {
+      "id": "S34",
+      "text": "About 4 percent converted.",
+      "item": 12
+    },
+    {
+      "id": "S35",
+      "text": "What I learned is that small carriers didn't want self-serve, they wanted a phone call.",
+      "item": 13
+    },
+    {
+      "id": "S36",
+      "text": "We kept the flow for lead capture and put a sales call behind it.",
+      "item": 13
+    },
+    {
+      "id": "S37",
+      "text": "I would not call that launch a success, and I say so when people ask.",
+      "item": 13
+    },
+    {
+      "id": "S38",
+      "text": "I lead without being anyone's manager.",
+      "item": 14
+    },
+    {
+      "id": "S39",
+      "text": "I work with one engineering manager, and my team is about seven engineers, one designer and a part-time data analyst.",
+      "item": 14
+    },
+    {
+      "id": "S40",
+      "text": "Stakeholders I work with most are the head of customer success and the VP of product.",
+      "item": 15
+    },
+    {
+      "id": "S41",
+      "text": "I send a written weekly update every Friday, one page, with what shipped, what slipped and why.",
+      "item": 15
+    },
+    {
+      "id": "S42",
+      "text": "I took a career break from June 2019 to February 2020, about eight months.",
+      "item": 16
+    },
+    {
+      "id": "S43",
+      "text": "My father had heart surgery and I was the one at home to look after him.",
+      "item": 16
+    },
+    {
+      "id": "S44",
+      "text": "During that time I did an online course in SQL and product analytics, and I finished it.",
+      "item": 16
+    },
+    {
+      "id": "S45",
+      "text": "When I came back I joined a smaller logistics startup as a product manager for about a year, then moved to FleetGrid.",
+      "item": 17
+    },
+    {
+      "id": "S46",
+      "text": "I've never had a referral for any of my jobs.",
+      "item": 18
+    },
+    {
+      "id": "S47",
+      "text": "Every role I got was through a cold application or a recruiter message.",
+      "item": 18
+    },
+    {
+      "id": "S48",
+      "text": "I find asking for referrals uncomfortable, because I don't like asking people I don't know well.",
+      "item": 18
+    },
+    {
+      "id": "S49",
+      "text": "Why I'm looking now: FleetGrid is moving my area into maintenance mode and I want to keep working on applied AI in operations software.",
+      "item": 19
+    },
+    {
+      "id": "S50",
+      "text": "What I want next is a senior PM role where AI is in the core workflow, and the team actually measures whether it works.",
+      "item": 20
+    },
+    {
+      "id": "S51",
+      "text": "Tools I use day to day: Jira, Figma for reviewing designs, Amplitude for product data, and SQL on our warehouse.",
+      "item": 21
+    },
+    {
+      "id": "S52",
+      "text": "I can write basic SQL queries myself.",
+      "item": 21
+    },
+    {
+      "id": "S53",
+      "text": "I don't write production code.",
+      "item": 21
+    },
+    {
+      "id": "S54",
+      "text": "I'm based in Pune and I'm open to remote roles or to hybrid in Pune.",
+      "item": 22
+    },
+    {
+      "id": "S55",
+      "text": "On the triage evaluation, the 400 cases were from the previous four months of closed exceptions, and we removed duplicates first.",
+      "item": 23
+    },
+    {
+      "id": "S56",
+      "text": "The two dispatchers disagreed on about 1 in 10 cases.",
+      "item": 24
+    },
+    {
+      "id": "S57",
+      "text": "For those, the dispatch lead made the final call.",
+      "item": 24
+    },
+    {
+      "id": "S58",
+      "text": "I wrote that down as our tie-break rule before we started.",
+      "item": 24
+    },
+    {
+      "id": "S59",
+      "text": "I have not built an evaluation for a generative model, only for classification.",
+      "item": 25
+    },
+    {
+      "id": "S60",
+      "text": "If someone asks, I say that plainly.",
+      "item": 25
+    },
+    {
+      "id": "S61",
+      "text": "The 19 to 11 minutes number is the median, not the average.",
+      "item": 26
+    },
+    {
+      "id": "S62",
+      "text": "The average moved less, because a few very long cases stayed long.",
+      "item": 26
+    },
+    {
+      "id": "S63",
+      "text": "I have never managed people directly.",
+      "item": 27
+    },
+    {
+      "id": "S64",
+      "text": "I mentored one associate product manager for about a year.",
+      "item": 27
+    },
+    {
+      "id": "S65",
+      "text": "I speak English, Hindi and Marathi.",
+      "item": 28
+    },
+    {
+      "id": "S66",
+      "text": "I write product documents in English.",
+      "item": 28
+    }
+  ],
+  "web_lines": [
+    {
+      "id": "W1",
+      "text": "![Banner](https://recruiting.cdn.greenhouse.io/job_board_renderer/job_board_configurations/banners/000/000/647/original/banner_containers.jpg?1734537392) ![Flexport Logo](https://recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/000/004/005/original/Flexport_Full-Color-Mark_1x_(1).png?1786677092) # Senior Product Manager, Commerce ## **About Flexport:** At Flexport, we believe global trade can move the human race forward.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W2",
+      "text": "That’s why it’s our mission to make global commerce so easy there will be more of it.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W3",
+      "text": "We’re shaping the future of a $10T industry with solutions powered by innovative technology and exceptional people.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W4",
+      "text": "Today, companies of all sizes—from emerging brands to Fortune 500s—use Flexport technology to move more than $19B of merchandise across 112 countries a year.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W5",
+      "text": "The recent global supply chain crisis has put Flexport center stage as we continue to play a pivotal role in how goods move around the world.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W6",
+      "text": "We are proud to have the support of the best investors in the game who believe in our mission, solutions and people.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W7",
+      "text": "Ready to tackle global challenges that impact business, society, and the environment?",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W8",
+      "text": "Come join us. ## **The opportunity:** We're looking for a Senior Product Manager to join Flexport's product team and own a critical part of how we serve clients and operators across global logistics.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W9",
+      "text": "You'll define the vision and roadmap for your product area, ship features that drive measurable business outcomes, and collaborate with engineering, design, commercial, and operations teams to solve hard problems at scale.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W10",
+      "text": "Flexport's platform powers every stage of global freight, from booking and pricing to visibility, customs, and delivery.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W11",
+      "text": "The products you build will be used daily by logistics managers, supply chain leaders, freight operators, and internal teams who keep goods moving around the world.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W12",
+      "text": "This is a high-impact role for someone who combines strong product instincts with deep analytical skills and comfort navigating complex domains. ## The team: The **Commerce** team owns the end-to-end quality, automation, and profitability of Flexport’s commerce domain.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W13",
+      "text": "We build intelligent agents to automate critical commerce workflows, including quoting, billing, and invoicing, while driving cost intelligence across every shipment process gate to optimize profitability.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W14",
+      "text": "Additionally, our team expands the marketplace catalog for new offerings and develops next-generation, client-facing commerce products and payments technology. ## **You will:** ## **You should have:** #LI-onsite #LI-VA1 The US base salary range for this position (this does not include bonus, equity and benefits): $174,000 - $213,000 USD #### Commitment to Equal Opportunity At Flexport, our ability to fulfill our mission of making global commerce easy and accessible relies on having a diverse, dedicated and engaged workforce.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W15",
+      "text": "All qualified applicants will receive consideration for employment regardless of race, color, religion, sex, national origin, age, physical and mental disability, health status, marital and family status, sexual orientation, gender identity and expression, military and veteran status, and any other characteristic protected by applicable law. #### Global Data Privacy Notice for Job Candidates and Applicants Depending on your location, the General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA) may regulate the way we manage the data of job applicants.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W16",
+      "text": "By submitting your application, you are agreeing to our use and processing of your data as required.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W17",
+      "text": "Please see our Privacy Notice available at [www.flexport.com/privacy](http://www.flexport.com/privacy) for additional information.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W18",
+      "text": "Create a Job Alert Interested in building your career at Flexport?",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W19",
+      "text": "Get future opportunities sent straight to your email. ## Apply for this job \\* indicates a required field Accepted file types: pdf, doc, docx, txt, rtf ### Voluntary Demographic Questions At Flexport, our ability to fulfill our mission of making global commerce easy and accessible relies on having a diverse, dedicated and engaged workforce.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W20",
+      "text": "All qualified applicants will receive consideration for employment regardless of race, color, religion, sex, national origin, age, physical and mental disability, health status, marital and family status, sexual orientation, gender identity and expression, military and veteran status, and any other characteristic protected by applicable law.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W21",
+      "text": "Completing this survey is optional, but we hope that you will choose to answer.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W22",
+      "text": "All responses are kept private and will not be used during the hiring process in any way.",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W23",
+      "text": "Powered by",
+      "url": "https://job-boards.greenhouse.io/flexport/jobs/8158023"
+    },
+    {
+      "id": "W24",
+      "text": "Accessibility Statement Skip Navigation # Flexport Unveils 20+ Tech and AI-Powered Products to Modernize Global Supply Chains ## News provided by Flexport, Inc.",
+      "url": "https://www.prnewswire.com/news-releases/flexport-unveils-20-tech-and-ai-powered-products-to-modernize-global-supply-chains-302383593.html"
+    },
+    {
+      "id": "W25",
+      "text": "Feb 24, 2025, 11:54 ET ## Share this article Share toX Share this article Share toX At the forefront of the launch are Flexport Intelligence with an AI Insights Builder, and Flexport Control Tower expanding supply chain visibility and management capabilities. [...] SAN FRANCISCO, Feb.",
+      "url": "https://www.prnewswire.com/news-releases/flexport-unveils-20-tech-and-ai-powered-products-to-modernize-global-supply-chains-302383593.html"
+    },
+    {
+      "id": "W26",
+      "text": "24, 2025 /PRNewswire/ -- Flexport, the global leader in supply chain technology, today announced its first Winter Release, launching more than 20 tech and AI-powered products designed to transform global logistics.",
+      "url": "https://www.prnewswire.com/news-releases/flexport-unveils-20-tech-and-ai-powered-products-to-modernize-global-supply-chains-302383593.html"
+    },
+    {
+      "id": "W27",
+      "text": "The highlight of the release is Flexport Intelligence, which allows businesses to ask questions in natural language and receive immediate insights about their supply chain performance.",
+      "url": "https://www.prnewswire.com/news-releases/flexport-unveils-20-tech-and-ai-powered-products-to-modernize-global-supply-chains-302383593.html"
+    },
+    {
+      "id": "W28",
+      "text": "Flexport customers can use this AI-powered tool to build reports and create dashboards with no technical skills required, making it extremely easy for operations managers to take control of their global supply chains.",
+      "url": "https://www.prnewswire.com/news-releases/flexport-unveils-20-tech-and-ai-powered-products-to-modernize-global-supply-chains-302383593.html"
+    },
+    {
+      "id": "W29",
+      "text": "Continue Reading [...] Internal Technology to Deliver the Highest Quality and Best Value for ClientsIn this release, Flexport is sharing an inside look at the powerful technology that enables its operations teams to provide unmatched quality, service, and lower costs for customers.",
+      "url": "https://www.prnewswire.com/news-releases/flexport-unveils-20-tech-and-ai-powered-products-to-modernize-global-supply-chains-302383593.html"
+    },
+    {
+      "id": "W30",
+      "text": "From route optimization and workflow automation to customs compliance tools, the company is sharing a look under the hood at how it builds technology to coordinate complexity and simplify the world of global logistics.",
+      "url": "https://www.prnewswire.com/news-releases/flexport-unveils-20-tech-and-ai-powered-products-to-modernize-global-supply-chains-302383593.html"
+    },
+    {
+      "id": "W31",
+      "text": "\"Flexport's technology isn't just about automation—it's about augmentation,\" said Sanne Manders, President of Flexport.",
+      "url": "https://www.prnewswire.com/news-releases/flexport-unveils-20-tech-and-ai-powered-products-to-modernize-global-supply-chains-302383593.html"
+    },
+    {
+      "id": "W32",
+      "text": "\"Our tools free up human ingenuity to tackle challenges AI alone can't solve, delivering the highest quality service at the best value.\"",
+      "url": "https://www.prnewswire.com/news-releases/flexport-unveils-20-tech-and-ai-powered-products-to-modernize-global-supply-chains-302383593.html"
+    },
+    {
+      "id": "W33",
+      "text": "The expansion represents the first international rollout of Flexport’s fulfillment business and extends its end-to-end logistics network into two markets where many of its customers already sell.",
+      "url": "https://www.freightwaves.com/news/flexport-takes-fulfillment-network-international-with-canada-uk-expansion"
+    },
+    {
+      "id": "W34",
+      "text": "Flexport said customers can now import inventory in bulk, store products domestically and fulfill orders within each country while continuing to use the same Flexport platform, account team and freight and customs relationships. “Our customers built demand in Canada and the UK long before they had a good way to serve it,” Flexport founder and CEO Ryan Petersen said in a statement. “Flexport customers using freight through fulfillment in the U.S. have seen tangible efficiencies and cost savings with end-to-end logistics.” ## Flexport targets Toronto, Manchester",
+      "url": "https://www.freightwaves.com/news/flexport-takes-fulfillment-network-international-with-canada-uk-expansion"
+    },
+    {
+      "id": "W35",
+      "text": "Loading video Couldn't load video Loading video Couldn't load video RESULTS ## The Flexport Platform saves time and money Customers who use the Flexport Platform move faster, make more informed decisions, and spend less time chasing emails and managing spreadsheets.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W36",
+      "text": "80% 80%: of emails eliminated on every shipment when using the Flexport Platform 20 20: manual tasks eliminated per shipment when using the Flexport Platform 10% 10%: reduction in freight costs when using AI-container optimization 30 30: minutes for a standard NetSuite integration 11 11: languages available with native in-platform translation, including live messaging 60+ 60+: retail integrations for omnichannel and fulfillment customers [...] In Transit to Arrival Port 1.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W37",
+      "text": "Hamburg, GermanyCRD:Oct 2, 2026Picked Up:Oct 2, 2026 CEST 2.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W38",
+      "text": "Rotterdam, NetherlandsDelivered:Oct 4, 2026 CESTDeparted:Oct 5, 2026 CEST 3.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W39",
+      "text": "New York, NYEst.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W40",
+      "text": "Arrival:Oct 20, 2026 EDT 4.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W41",
+      "text": "Ashford Distribution CenterEst.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W42",
+      "text": "Delivery:Oct 24, 2026 EDT FLEX-2210897Name: Apparel Restock SS26 Flexport freight•Ocean FCL•FLXT TPEB Open carrier Orders attached:PO-10245 Containers:MSKU7781234 MBL#: FLXT22108970021HBL#: FLXT00002210897D Delivered 1.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W43",
+      "text": "SingaporePicked Up:Sep 14, 2026 SGT 2.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W44",
+      "text": "Hong KongArrived:Sep 17, 2026 HKTDeparted:Sep 18, 2026 HKT 3.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W45",
+      "text": "Long Beach, CAArrived:Oct 7, 2026 PDT 4.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W46",
+      "text": "Harborline Freight TerminalDelivered:Oct 11, 2026 PDT 4 Shipments FLEX-3820000•Kitchen Appliances Q3 At Arrival Port FLEX-3820036•PO-77341 [...] FLEX-3391120Name: Consumer Electronics Q3 Flexport freight•Air•FLXT Air Express Orders attached:PO-88213 Containers:— MBL#: FLXT99120034556HBL#: FLXT00003391120B Customs Clearance 1.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W47",
+      "text": "Shanghai, ChinaPicked Up:Oct 10, 2026 CST 2.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W48",
+      "text": "Anchorage, AKDeparted:Oct 11, 2026 AKDT 3.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W49",
+      "text": "Chicago, ILArrived:Oct 13, 2026 CDT 4.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W50",
+      "text": "Prairie Crest WarehouseEst.",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W51",
+      "text": "Delivery:Oct 16, 2026 CDT FLEX-5582034Name: Industrial Parts Lot 12 Flexport freight•Ocean LCL•Hapag-Lloyd Orders attached:PO-44190 Containers:TGHU4471209 MBL#: FLXT55820349910HBL#: FLXT00005582034C In Transit to Arrival Port",
+      "url": "https://www.flexport.com/products/flexport-platform"
+    },
+    {
+      "id": "W52",
+      "text": "To help our customers grow, we continue to expand our partnerships.",
+      "url": "https://www.flexport.com/blog/celebrating-one-year-of-fulfillment-flexports-vision-for-building-the-best"
+    },
+    {
+      "id": "W53",
+      "text": "Flexport now integrates with more than 30+ eCommerce platforms and B2B retailers including Shopify, Amazon, Walmart, and our newest addition SHEIN Marketplace.",
+      "url": "https://www.flexport.com/blog/celebrating-one-year-of-fulfillment-flexports-vision-for-building-the-best"
+    },
+    {
+      "id": "W54",
+      "text": "We also partner with a diverse set of national and regional carriers to offer nationwide shipping with fast, reliable delivery speeds.",
+      "url": "https://www.flexport.com/blog/celebrating-one-year-of-fulfillment-flexports-vision-for-building-the-best"
+    },
+    {
+      "id": "W55",
+      "text": "Our goal is to give customers more flexibility and optionality in how they sell and ship their products. [...] As I reflect on this past year, I am overcome with a deep sense of gratitude and pride for all our team has built, transformed, and accomplished for our customers in such a short period of time.",
+      "url": "https://www.flexport.com/blog/celebrating-one-year-of-fulfillment-flexports-vision-for-building-the-best"
+    },
+    {
+      "id": "W56",
+      "text": "Integrating two robust businesses and navigating through complexity and ambiguity is no easy feat.",
+      "url": "https://www.flexport.com/blog/celebrating-one-year-of-fulfillment-flexports-vision-for-building-the-best"
+    },
+    {
+      "id": "W57",
+      "text": "On June 6, we closed on the acquisition, and a mere 90 days later we launched the first-ever supply chain product that married international freight services, domestic omnichannel and ecommerce fulfillment, and trade and financial services.",
+      "url": "https://www.flexport.com/blog/celebrating-one-year-of-fulfillment-flexports-vision-for-building-the-best"
+    },
+    {
+      "id": "W58",
+      "text": "This enabled the legacy Deliverr Seller Portal to rapidly evolve into the first technology platform to connect a customer’s supply chain from factory floor to customer door – now known as Flexport’s Omnichannel Seller Portal.",
+      "url": "https://www.flexport.com/blog/celebrating-one-year-of-fulfillment-flexports-vision-for-building-the-best"
+    },
+    {
+      "id": "W59",
+      "text": "Even more impressive, we built a",
+      "url": "https://www.flexport.com/blog/celebrating-one-year-of-fulfillment-flexports-vision-for-building-the-best"
+    },
+    {
+      "id": "W60",
+      "text": "# Flexport Fall 2025 Technology Release ## Channel: Flexport 7.15K subscribers 60 likes ### Description 3,708 views Posted: 2025-10-14 October 14, 2025 Watch Ryan Petersen, Founder and CEO of Flexport, as he announces Flexport's 2025 Fall Technology Release featuring new AI and technology products built to help businesses thrive in the new trade reality.",
+      "url": "https://www.youtube.com/watch?v=IvKbOrEM4CI"
+    },
+    {
+      "id": "W61",
+      "text": "In a world where policies shift overnight and costs climb, businesses need tools that deliver clarity and speed.",
+      "url": "https://www.youtube.com/watch?v=IvKbOrEM4CI"
+    },
+    {
+      "id": "W62",
+      "text": "Our latest innovations are designed to help you manage evolving tariffs and trade regulations, simplify complexity, and reduce costs. [...] [25:08] maintaining some really good uh KPIs.",
+      "url": "https://www.youtube.com/watch?v=IvKbOrEM4CI"
+    },
+    {
+      "id": "W63",
+      "text": "So 98% on-time delivery, 99% on-time shipping.",
+      "url": "https://www.youtube.com/watch?v=IvKbOrEM4CI"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "Tell us about an AI product you shipped and how you measured whether it worked.",
+      "word_limit": 200,
+      "kind": "essay"
+    },
+    {
+      "id": "Q2",
+      "text": "Why are you interested in this role?",
+      "word_limit": 150,
+      "kind": "essay"
+    },
+    {
+      "id": "Q3",
+      "text": "A short LinkedIn note to the hiring manager for this role.",
+      "kind": "outreach_short"
+    }
+  ],
+  "answers": [
+    {
+      "question_id": "Q1",
+      "sentences": [
+        {
+          "id": "Q1-1",
+          "text": "The role owns a critical part of global logistics and ships features that drive measurable business outcomes.",
+          "label": "web",
+          "source_ids": [
+            "W9"
+          ],
+          "quote": "ship features that drive measurable business outcomes",
+          "status": "kept",
+          "number_check": {
+            "numbers": [],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        },
+        {
+          "id": "Q1-2",
+          "text": "I shipped an AI triage feature for the exceptions desk that suggests a category and next step for every exception.",
+          "label": "spoken",
+          "source_ids": [
+            "S9",
+            "S10"
+          ],
+          "quote": "The biggest thing I shipped is an AI triage feature for that exceptions desk. Every exception that came in got a suggested category and a suggested next step.",
+          "status": "kept",
+          "number_check": {
+            "numbers": [],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        },
+        {
+          "id": "Q1-3",
+          "text": "I set up the evaluation using 400 past exceptions labelled by two senior dispatchers as a test set.",
+          "label": "spoken",
+          "source_ids": [
+            "S14",
+            "S16"
+          ],
+          "quote": "I wrote the spec, I set up the evaluation, and I ran the pilot. We took 400 past exceptions that dispatchers had already closed, and two senior dispatchers labelled the right category for each one.",
+          "status": "kept",
+          "number_check": {
+            "numbers": [
+              "400",
+              "2"
+            ],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        },
+        {
+          "id": "Q1-4",
+          "text": "The first version got 71 percent of categories right, which was not good enough to ship because a wrong category sends the ticket to the wrong team.",
+          "label": "spoken",
+          "source_ids": [
+            "S18",
+            "S19"
+          ],
+          "quote": "The first version got 71 percent of categories right on that set. That was not good enough to ship, because a wrong category sends the ticket to the wrong team.",
+          "status": "kept",
+          "number_check": {
+            "numbers": [
+              "71"
+            ],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        },
+        {
+          "id": "Q1-5",
+          "text": "We changed it to suggest only when confident, reaching 92 percent accuracy on 64 percent of tickets.",
+          "label": "spoken",
+          "source_ids": [
+            "S20",
+            "S21"
+          ],
+          "quote": "We changed it so that it only suggested a category when it was confident, and otherwise it said \"needs a human\". On the cases where it did suggest, it was right 92 percent of the time, and it suggested on about 64 percent of tickets.",
+          "status": "kept",
+          "number_check": {
+            "numbers": [
+              "92",
+              "64"
+            ],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        },
+        {
+          "id": "Q1-6",
+          "text": "A six-week pilot with three customers cut median time to first action from 19 minutes to 11 minutes.",
+          "label": "spoken",
+          "source_ids": [
+            "S22",
+            "S23"
+          ],
+          "quote": "We piloted it with three customers for six weeks. Median time to the first action on an exception went from about 19 minutes to about 11 minutes across those three customers.",
+          "status": "kept",
+          "number_check": {
+            "numbers": [
+              "6",
+              "3",
+              "19",
+              "11"
+            ],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        },
+        {
+          "id": "Q1-7",
+          "text": "A weekly human review of 30 suggestions caught a systematic mislabel of weather delays as carrier faults.",
+          "label": "spoken",
+          "source_ids": [
+            "S26",
+            "S27"
+          ],
+          "quote": "The model started tagging every weather delay as a \"carrier fault\", because one customer typed weather notes in the carrier field. We caught it because I had asked for a weekly sample review of 30 suggestions.",
+          "status": "kept",
+          "number_check": {
+            "numbers": [
+              "30"
+            ],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        }
+      ],
+      "unanswered": null,
+      "char_count": 781,
+      "word_count": 134
+    },
+    {
+      "question_id": "Q2",
+      "sentences": [
+        {
+          "id": "Q2-1",
+          "text": "Flexport builds intelligent agents to automate commerce workflows like quoting, billing and invoicing.",
+          "label": "web",
+          "source_ids": [
+            "W13"
+          ],
+          "quote": "We build intelligent agents to automate critical commerce workflows, including quoting, billing, and invoicing",
+          "status": "kept",
+          "number_check": {
+            "numbers": [],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        },
+        {
+          "id": "Q2-2",
+          "text": "FleetGrid is moving my area into maintenance mode and I want to keep working on applied AI in operations software.",
+          "label": "spoken",
+          "source_ids": [
+            "S49"
+          ],
+          "quote": "FleetGrid is moving my area into maintenance mode and I want to keep working on applied AI in operations software.",
+          "status": "kept",
+          "number_check": {
+            "numbers": [],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        },
+        {
+          "id": "Q2-3",
+          "text": "I want a senior PM role where AI is in the core workflow and the team actually measures whether it works.",
+          "label": "spoken",
+          "source_ids": [
+            "S50"
+          ],
+          "quote": "What I want next is a senior PM role where AI is in the core workflow, and the team actually measures whether it works.",
+          "status": "kept",
+          "number_check": {
+            "numbers": [],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        },
+        {
+          "id": "Q2-4",
+          "text": "I have shipped an AI triage feature with a rigorous evaluation and a pilot that cut median action time nearly in half.",
+          "label": "spoken",
+          "source_ids": [
+            "S9",
+            "S23"
+          ],
+          "quote": "The biggest thing I shipped is an AI triage feature for that exceptions desk. Median time to the first action on an exception went from about 19 minutes to about 11 minutes across those three customers.",
+          "status": "cut",
+          "cut_reason": "The sentence claims the pilot cut median action time \"nearly in half,\" but the evidence shows a reduction from ~19 to ~11 minutes (~42%), not a near‑halving.",
+          "number_check": {
+            "numbers": [],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false,
+          "ask": "What did you do here? Say it in your own words."
+        }
+      ],
+      "unanswered": null,
+      "char_count": 323,
+      "word_count": 54
+    },
+    {
+      "question_id": "Q3",
+      "sentences": [
+        {
+          "id": "Q3-1",
+          "text": "Flexport's Commerce team builds intelligent agents to automate quoting, billing and invoicing workflows.",
+          "label": "web",
+          "source_ids": [
+            "W13"
+          ],
+          "quote": "We build intelligent agents to automate critical commerce workflows, including quoting, billing, and invoicing",
+          "status": "kept",
+          "number_check": {
+            "numbers": [],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        },
+        {
+          "id": "Q3-2",
+          "text": "I shipped an AI triage feature with a 400-case evaluation and a pilot that cut median exception handling time from 19 to 11 minutes.",
+          "label": "spoken",
+          "source_ids": [
+            "S9",
+            "S16",
+            "S23"
+          ],
+          "quote": "The biggest thing I shipped is an AI triage feature for that exceptions desk. We took 400 past exceptions that dispatchers had already closed, and two senior dispatchers labelled the right category for each one. Median time to the first action on an exception went from about 19 minutes to about 11 minutes across those three customers.",
+          "status": "kept",
+          "number_check": {
+            "numbers": [
+              "400",
+              "19",
+              "11"
+            ],
+            "passed": true,
+            "missing": []
+          },
+          "generic": false,
+          "verdict": "none",
+          "marked_blind": false
+        },
+        {
+          "id": "Q3-3",
+          "text": "I would value a quick chat about how your team measures AI impact in production.",
+          "label": "inference",
+          "source_ids": [],
+          "quote": "",
+          "status": "kept",
+          "number_check": {
+            "numbers": [],
+            "passed": true,
+            "missing": []
+          },
+          "generic": true,
+          "verdict": "none",
+          "marked_blind": false
+        }
+      ],
+      "unanswered": null,
+      "char_count": 318,
+      "word_count": 52
+    }
+  ]
+}
